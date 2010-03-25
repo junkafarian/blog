@@ -172,7 +172,7 @@ htmlhelp_basename = 'junkafariansramblingsdoc'
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'junkafariansramblings.tex', u'junkafarian\'s ramblings Documentation',
+  ('index', 'junkafariansramblings.tex', u'junkafarian\'s ramblings',
    u'junkafarian', 'manual'),
 ]
 

@@ -1,20 +1,12 @@
-.. junkafarian's ramblings documentation master file, created by
-   sphinx-quickstart on Thu Mar 25 18:34:48 2010.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+junkafarian's ramblings's
+=========================
 
-Welcome to junkafarian's ramblings's documentation!
-===================================================
+Ramblings on topics that I'm likely to forget down the line.
 
 Contents:
 
 .. toctree::
    :maxdepth: 2
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+   
+   
 
