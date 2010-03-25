@@ -11,5 +11,5 @@ Posts:
 .. toctree::
    :maxdepth: 2
    
-   
+   posts/getting_started
 
