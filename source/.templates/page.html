@@ -1,6 +1,7 @@
 {% extends "!page.html" %}
 {% block body %}
     {{ super() }}
+    {% if 'posts' in pagename %}
     <div id="disqus_thread"></div>
     <script type="text/javascript">
     (function() {
@@ -11,9 +12,11 @@
     </script>
     <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=junkafariansramblings">comments powered by Disqus.</a></noscript>
     <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+    {% endif %}
 {% endblock %}
 {% block footer %}
     {{ super() }}
+    {% if 'posts' in pagename %}
     <script type="text/javascript">
     //<![CDATA[
     (function() {
@@ -28,4 +31,5 @@
     })();
     //]]>
     </script>
+    {% endif %}
 {% endblock %}
