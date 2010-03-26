@@ -13,4 +13,5 @@ Posts
    :maxdepth: 2
    
    posts/getting_started
+   posts/sphinx_cms
 
