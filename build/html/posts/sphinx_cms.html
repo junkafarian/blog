@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Using Sphinx as a CMS &mdash; Home</title>
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Home" href="../index.html" />
+    <link rel="prev" title="Getting Started" href="getting_started.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="getting_started.html" title="Getting Started"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Home</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+    
+  <div class="section" id="using-sphinx-as-a-cms">
+<h1>Using Sphinx as a CMS<a class="headerlink" href="#using-sphinx-as-a-cms" title="Permalink to this headline">¶</a></h1>
+<p>After having some success using <a class="reference external" href="http://sphinx.pocoo.org/">Sphinx</a> to document
+current projects and having a stab at <a class="reference external" href="http://github.com/junkafarian/karldocs">some documentation</a>
+for the <a class="reference external" href="http://karlproject.org">KARL</a> project, I&#8217;ve decided that Sphinx makes
+for a fairly decent CMS when coupled with version control.</p>
+<p>The advantages of this approach (or at least the things I appreciate about this
+method) are:</p>
+<ol class="arabic">
+<li><p class="first"><tt class="docutils literal"><span class="pre">reStructuredText</span></tt>: The ability to create a new page with such an emphasis
+on content using whichever text editor you like has a lot going for it. There
+is no clicking around an online CMS to create new pages, and I personally
+much prefer editing text in a <a class="reference external" href="http://aquamacs.org">Text Editor</a> than
+through a WYSIWYG in a web form.</p>
+</li>
+<li><p class="first"><tt class="docutils literal"><span class="pre">file-system</span> <span class="pre">based</span></tt>: Having the site structure and text files all
+accessible through you&#8217;re local file browser makes a lot of sense. It&#8217;s
+searchable (as any text file would be) and you don&#8217;t have to worry about
+forgetting the URL to one of the pages which isn&#8217;t linked up to the rest of
+the site.</p>
+</li>
+<li><p class="first"><tt class="docutils literal"><span class="pre">static</span> <span class="pre">output</span></tt>: When Sphinx has built the source into HTML, there is no
+need for additional processing when serving the content. This means you can
+stick the HTML files straight behind Apache wih no need to set up an
+application server.</p>
+</li>
+<li><p class="first"><tt class="docutils literal"><span class="pre">versioning</span></tt>: One of the major problems I find with Content Management
+Systems is versioning (whether it is making them or using them). Either it
+isn&#8217;t implemented or you have to use whatever custom interface is provided.
+Some of these interfaces work quite well, however, they usually only track
+changes on a single file / page. That is where having a tool made for the job
+comes in handy.</p>
+</li>
+<li><p class="first"><tt class="docutils literal"><span class="pre">previewing</span> <span class="pre">and</span> <span class="pre">staging</span></tt>: A lot of CMS solutions have the ability to
+preview content before publishing it to world+dog. The way I will preview
+this post (when finished) is to:</p>
+<div class="highlight-python"><pre>$ make html
+(view in browser)
+(adjust if necessary)
+$ git commit ...
+$ git push</pre>
+</div>
+<p>And then update the live server. I know this methodology is very orientated
+to developers used to dealing with this sort of process on a daily basis,
+however, I am one of those people and I find it quite sensible.</p>
+</li>
+<li><p class="first"><tt class="docutils literal"><span class="pre">search</span></tt>: Sphinx compiles some javascript at build time to allow the source
+files to be searchable. This would be the main reason (for me) to use a
+dynamic element server-side, however, I am glad that I don&#8217;t have to!</p>
+</li>
+<li><p class="first"><tt class="docutils literal"><span class="pre">RSS</span> <span class="pre">/</span> <span class="pre">Syndication</span></tt>: Another element of blog functionality that makes a
+lot of sense to process server-side. By plugging into the Sphinx extension
+framework, it is fairly easy to generate the xml required at build time.</p>
+</li>
+</ol>
+<p>The above does not in any way suggest that I am going to start promoting the
+idea of using Sphinx to clients who don&#8217;t understand the difference between a
+web browser and an operating system. Nevertheless, I think it is a useful tool
+to have in the web development arsenal.</p>
+</div>
+
+
+    
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = 'http://junkafariansramblings.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=junkafariansramblings">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+    
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h4>Previous topic</h4>
+            <p class="topless"><a href="getting_started.html"
+                                  title="previous chapter">Getting Started</a></p>
+          <div id="searchbox" style="display: none">
+            <h3>Quick search</h3>
+              <form class="search" action="../search.html" method="get">
+                <input type="text" name="q" size="18" />
+                <input type="submit" value="Go" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+              <p class="searchtip" style="font-size: 90%">
+              Enter search terms or a module, class or function name.
+              </p>
+          </div>
+          <script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="getting_started.html" title="Getting Started"
+             >previous</a> |</li>
+        <li><a href="../index.html">Home</a> &raquo;</li> 
+      </ul>
+    </div>
+    
+    <div class="footer">
+      &copy; Copyright 2010, junkafarian.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.5.
+    </div>
+    
+    <script type="text/javascript">
+    //<![CDATA[
+    (function() {
+    var links = document.getElementsByTagName('a');
+    var query = '?';
+    for(var i = 0; i < links.length; i++) {
+    if(links[i].href.indexOf('#disqus_thread') >= 0) {
+    query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+    }
+    }
+    document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/junkafariansramblings/get_num_replies.js' + query + '"></' + 'script>');
+    })();
+    //]]>
+    </script>
+    
+
+  </body>
+</html>

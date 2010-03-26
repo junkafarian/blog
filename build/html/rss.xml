@@ -1,8 +1,68 @@
-<rss version="2.0"><channel><title>junkafarian's ramblings</title><link>http://junkafarian.largeblue.net/blog/</link><description /><copyright>2010, junkafarian</copyright><item><title>Getting Started</title><link>http://junkafarian.largeblue.net/blog//posts/getting_started.html</link><description>&lt;div class=&quot;section&quot; id=&quot;getting-started&quot;&gt;
+<rss version="2.0"><channel><title>junkafarian's ramblings</title><link>http://junkafarian.largeblue.net/blog/</link><description /><copyright>2010, junkafarian</copyright><item><title>Using Sphinx as a CMS</title><link>http://junkafarian.largeblue.net/blog//posts/sphinx_cms.html</link><description>&lt;div class=&quot;section&quot; id=&quot;using-sphinx-as-a-cms&quot;&gt;
+&lt;h1&gt;Using Sphinx as a CMS&lt;a class=&quot;headerlink&quot; href=&quot;#using-sphinx-as-a-cms&quot; title=&quot;Permalink to this headline&quot;&gt;&#182;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;After having some success using &lt;a class=&quot;reference external&quot; href=&quot;http://sphinx.pocoo.org/&quot;&gt;Sphinx&lt;/a&gt; to document
+current projects and having a stab at &lt;a class=&quot;reference external&quot; href=&quot;http://github.com/junkafarian/karldocs&quot;&gt;some documentation&lt;/a&gt;
+for the &lt;a class=&quot;reference external&quot; href=&quot;http://karlproject.org&quot;&gt;KARL&lt;/a&gt; project, I&amp;#8217;ve decided that Sphinx makes
+for a fairly decent CMS when coupled with version control.&lt;/p&gt;
+&lt;p&gt;The advantages of this approach (or at least the things I appreciate about this
+method) are:&lt;/p&gt;
+&lt;ol class=&quot;arabic&quot;&gt;
+&lt;li&gt;&lt;p class=&quot;first&quot;&gt;&lt;tt class=&quot;docutils literal&quot;&gt;&lt;span class=&quot;pre&quot;&gt;reStructuredText&lt;/span&gt;&lt;/tt&gt;: The ability to create a new page with such an emphasis
+on content using whichever text editor you like has a lot going for it. There
+is no clicking around an online CMS to create new pages, and I personally
+much prefer editing text in a &lt;a class=&quot;reference external&quot; href=&quot;http://aquamacs.org&quot;&gt;Text Editor&lt;/a&gt; than
+through a WYSIWYG in a web form.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class=&quot;first&quot;&gt;&lt;tt class=&quot;docutils literal&quot;&gt;&lt;span class=&quot;pre&quot;&gt;file-system&lt;/span&gt; &lt;span class=&quot;pre&quot;&gt;based&lt;/span&gt;&lt;/tt&gt;: Having the site structure and text files all
+accessible through you&amp;#8217;re local file browser makes a lot of sense. It&amp;#8217;s
+searchable (as any text file would be) and you don&amp;#8217;t have to worry about
+forgetting the URL to one of the pages which isn&amp;#8217;t linked up to the rest of
+the site.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class=&quot;first&quot;&gt;&lt;tt class=&quot;docutils literal&quot;&gt;&lt;span class=&quot;pre&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;pre&quot;&gt;output&lt;/span&gt;&lt;/tt&gt;: When Sphinx has built the source into HTML, there is no
+need for additional processing when serving the content. This means you can
+stick the HTML files straight behind Apache wih no need to set up an
+application server.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class=&quot;first&quot;&gt;&lt;tt class=&quot;docutils literal&quot;&gt;&lt;span class=&quot;pre&quot;&gt;versioning&lt;/span&gt;&lt;/tt&gt;: One of the major problems I find with Content Management
+Systems is versioning (whether it is making them or using them). Either it
+isn&amp;#8217;t implemented or you have to use whatever custom interface is provided.
+Some of these interfaces work quite well, however, they usually only track
+changes on a single file / page. That is where having a tool made for the job
+comes in handy.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class=&quot;first&quot;&gt;&lt;tt class=&quot;docutils literal&quot;&gt;&lt;span class=&quot;pre&quot;&gt;previewing&lt;/span&gt; &lt;span class=&quot;pre&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;pre&quot;&gt;staging&lt;/span&gt;&lt;/tt&gt;: A lot of CMS solutions have the ability to
+preview content before publishing it to world+dog. The way I will preview
+this post (when finished) is to:&lt;/p&gt;
+&lt;div class=&quot;highlight-python&quot;&gt;&lt;pre&gt;$ make html
+(view in browser)
+(adjust if necessary)
+$ git commit ...
+$ git push&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;And then update the live server. I know this methodology is very orientated
+to developers used to dealing with this sort of process on a daily basis,
+however, I am one of those people and I find it quite sensible.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class=&quot;first&quot;&gt;&lt;tt class=&quot;docutils literal&quot;&gt;&lt;span class=&quot;pre&quot;&gt;search&lt;/span&gt;&lt;/tt&gt;: Sphinx compiles some javascript at build time to allow the source
+files to be searchable. This would be the main reason (for me) to use a
+dynamic element server-side, however, I am glad that I don&amp;#8217;t have to!&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class=&quot;first&quot;&gt;&lt;tt class=&quot;docutils literal&quot;&gt;&lt;span class=&quot;pre&quot;&gt;RSS&lt;/span&gt; &lt;span class=&quot;pre&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;pre&quot;&gt;Syndication&lt;/span&gt;&lt;/tt&gt;: Another element of blog functionality that makes a
+lot of sense to process server-side. By plugging into the Sphinx extension
+framework, it is fairly easy to generate the xml required at build time.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The above does not in any way suggest that I am going to start promoting the
+idea of using Sphinx to clients who don&amp;#8217;t understand the difference between a
+web browser and an operating system. Nevertheless, I think it is a useful tool
+to have in the web development arsenal.&lt;/p&gt;
+&lt;/div&gt;
+</description><pubDate>Fri, 26 Mar 2010 13:00:00 </pubDate></item><item><title>Getting Started</title><link>http://junkafarian.largeblue.net/blog//posts/getting_started.html</link><description>&lt;div class=&quot;section&quot; id=&quot;getting-started&quot;&gt;
 &lt;h1&gt;Getting Started&lt;a class=&quot;headerlink&quot; href=&quot;#getting-started&quot; title=&quot;Permalink to this headline&quot;&gt;&#182;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;So I wouldn&amp;#8217;t exactly say I failed to resist the inane blogging trend that I
 often complain about. It&amp;#8217;s more that I needed somewhere to store ideas and todos
 better than in code or project docs.&lt;/p&gt;
 &lt;p&gt;(Plus I really like Sphinx&amp;#8217;s search tool!)&lt;/p&gt;
 &lt;/div&gt;
-</description><pubDate>Fri, 26 Mar 2010 10:10:00 </pubDate></item></channel></rss>
+</description><pubDate>Fri, 26 Mar 2010 10:00:00 </pubDate></item></channel></rss>
