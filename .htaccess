@@ -1,0 +1,2 @@
+RewriteEngine on
+RewriteRule RewriteRule ^/(.*)$ /home/junkafarian/public_www/blog/build/html/$1 [L]
