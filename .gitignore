@@ -1,2 +1,2 @@
 *.cov2emacs.log
-build/html/_sources/*
+build/doctrees/*
